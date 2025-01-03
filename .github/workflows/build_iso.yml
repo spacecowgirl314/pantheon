@@ -26,7 +26,7 @@ jobs:
       matrix:
         image_name:
           [pantheon, pantheon-nvidia, pantheon-silverblue, pantheon-silverblue-nvidia]
-        fedora_version: [40]
+        fedora_version: [41]
     env:
       IMAGE_TAG: ${{ matrix.fedora_version }}-amd64
       IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
