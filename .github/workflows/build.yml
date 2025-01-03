@@ -176,17 +176,17 @@ jobs:
             --disable-content-trust
 
       # Sign container
-      # - uses: sigstore/cosign-installer@v3.5.0
-      #   if: github.event_name != 'pull_request'
+      - uses: sigstore/cosign-installer@v3.5.0
+        if: github.event_name != 'pull_request'
 
-      # - name: Sign container image
-      #   if: github.event_name != 'pull_request'
-      #   run: |
-      #     cosign sign -y --key env://COSIGN_PRIVATE_KEY ${{ steps.registry_case.outputs.lowercase }}/${{ env.IMAGE_NAME }}@${TAGS}
-      #   env:
-      #     TAGS: ${{ steps.push.outputs.digest }}
-      #     COSIGN_EXPERIMENTAL: false
-      #     COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
+      - name: Sign container image
+        if: github.event_name != 'pull_request'
+        run: |
+          cosign sign -y --key env://COSIGN_PRIVATE_KEY ${{ steps.registry_case.outputs.lowercase }}/${{ env.IMAGE_NAME }}@${TAGS}
+        env:
+          TAGS: ${{ steps.push.outputs.digest }}
+          COSIGN_EXPERIMENTAL: false
+          COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
 
   check:
     name: Check all builds successful
