@@ -1,10 +1,9 @@
-# Fedora Atomic Cosmic
+# Fedora Atomic Pantheon
 
-Fedora Atomic Desktop with the COSMIC Desktop Environment included.
+Fedora Atomic Desktop with the Pantheon Desktop Environment included.
 
 > [!NOTE]
-> These images are not associated with System76! If you have issues, please understand they might be COSMIC related, OR they might be related to this image.
-> The COSMIC Desktop Environment is still ALPHA. Do not daily drive this image on your main workstation unless you know what you're doing.
+> These images are not associated with Elementary OS!
 
 ![Neofetch of COSMIC desktop in Fedora](./screenshot/cosmic-neofetch.png)
 
