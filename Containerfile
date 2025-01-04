@@ -32,7 +32,6 @@ RUN curl -Lo /etc/yum.repos.d/terra.repo \
         elementary-theme \
         elementary-wallpapers \
         gala \
-        gnome-session \
         gvfs \
         gvfs-afc \
         gvfs-afp \
@@ -59,11 +58,10 @@ RUN curl -Lo /etc/yum.repos.d/terra.repo \
         wingpanel-indicator-sound \
         zeitgeist-libs && \
     rpm-ostree install \
-        lightdm \
         gnome-keyring NetworkManager-tui \
         NetworkManager-openvpn && \
-    systemctl disable gdm || true && \
-    systemctl disable sddm || true && \
-    systemctl enable lightdm || true && \
+    #systemctl disable gdm || true && \
+    #systemctl disable sddm || true && \
+    #systemctl enable lightdm || true && \
     ostree container commit && \
     mkdir -p /var/tmp && chmod -R 1777 /var/tmp
