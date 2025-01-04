@@ -59,6 +59,7 @@ RUN curl -Lo /etc/yum.repos.d/terra.repo \
         wingpanel-indicator-sound \
         zeitgeist-libs && \
     rpm-ostree install \
+        lightdm \
         gnome-keyring NetworkManager-tui \
         NetworkManager-openvpn && \
     systemctl disable gdm || true && \

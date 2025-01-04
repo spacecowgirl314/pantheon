@@ -26,7 +26,7 @@ jobs:
       matrix:
         image_name:
           [pantheon, pantheon-nvidia, pantheon-silverblue, pantheon-silverblue-nvidia]
-        fedora_version: [41]
+        fedora_version: [40]
     env:
       IMAGE_TAG: ${{ matrix.fedora_version }}-amd64
       IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
@@ -83,7 +83,7 @@ jobs:
           echo "FLATPAK_REFS_DIR=${FLATPAK_REFS_DIR}" >> $GITHUB_OUTPUT
 
       - name: Build ISOs
-        uses: jasonn3/build-container-installer@v1.2.2
+        uses: jasonn3/build-container-installer@v1.2.4
         id: build
         with:
           iso_name: ${{ matrix.image_name }}-${{ matrix.fedora_version }}.iso
